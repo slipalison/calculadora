@@ -6,8 +6,8 @@ const metas = [
     { tipo: 'Renda Fixa', meta: 0.2 },
     { tipo: 'Renda Variável', meta: 0.2 },
     { tipo: 'FII', meta: 0.3 },
-    { tipo: 'ETF', meta: 0.3 },
-
+    { tipo: 'ETF', meta: 0.2 },
+    { tipo: 'Crypto', meta: 0.1 }
   ];
   
   // Notas dos ativos
@@ -25,7 +25,8 @@ const metas = [
     'Renda Fixa': 5,
     'Renda Variável': 300,
     'FII': 1000,
-    'ETF': 0
+    'ETF': 0,
+    'Crypto': 0
   };
   
   // Função para calcular a alocação dos aportes
@@ -71,6 +72,19 @@ const metas = [
       valor: valorAlocadoRendaFixa,
       porcentagem: (valorAlocadoRendaFixa / aporteTotal) * 100
     });
+
+
+    const metaCrypto = metas.find(meta => meta.tipo === 'Crypto');
+    const valorMetaCrypto = aporteTotal * metaCrypto.meta;
+    const valorAlocadoCrypto = valorMetaCrypto - valoresInvestidos['Crypto'];
+  
+    alocacaoAportes.push({
+      ativo: 'Crypto',
+      tipo: 'Crypto',
+      valor: valorAlocadoRendaFixa,
+      porcentagem: (valorAlocadoCrypto / aporteTotal) * 100
+    });
+
   
     return alocacaoAportes;
   }
