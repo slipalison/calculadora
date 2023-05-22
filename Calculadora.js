@@ -3,10 +3,11 @@
 
 // Metas
 const metas = [
-    { tipo: 'Renda Fixa', meta: 0.3 },
-    { tipo: 'Renda Variável', meta: 0.3 },
-    { tipo: 'FII', meta: 0.2 },
-    { tipo: 'ETF', meta: 0.2 }
+    { tipo: 'Renda Fixa', meta: 0.2 },
+    { tipo: 'Renda Variável', meta: 0.2 },
+    { tipo: 'FII', meta: 0.3 },
+    { tipo: 'ETF', meta: 0.3 },
+
   ];
   
   // Notas dos ativos
@@ -16,14 +17,14 @@ const metas = [
     { ativo: 'BEEF3', nota: 8, tipo: 'Renda Variável' },
     { ativo: 'MXRF11', nota: 6, tipo: 'FII' },
     { ativo: 'HGLG11', nota: 8, tipo: 'FII' },
-    { ativo: 'QQQ', nota: 8, tipo: 'ETF' },
+    { ativo: 'QQQ', nota: 8, tipo: 'ETF' }
   ];
   
   // Valores já investidos
   const valoresInvestidos = {
     'Renda Fixa': 5,
-    'Renda Variável': 3000,
-    'FII': 10000, 
+    'Renda Variável': 300,
+    'FII': 1000,
     'ETF': 0
   };
   
@@ -75,7 +76,7 @@ const metas = [
   }
   
   // Exemplo de uso
-  const aporteTotal = 1000;
+  const aporteTotal = 10000;
   const alocacaoAportes = calcularAlocacaoAportes(aporteTotal, metas, notasAtivos, valoresInvestidos);
   
   // Imprime a alocação dos aportes
